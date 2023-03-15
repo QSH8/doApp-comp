@@ -11,4 +11,3 @@
     require_once CONTROLLER_PATH . 'Controller.php';
 
     Router::route();
-?>

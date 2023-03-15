@@ -7,59 +7,29 @@
 
 class Database
 {
-    protected static $users = array(
+    private $users = array(
         [
-            'Имя'     => 'Эран',
-            'Фамилия' => 'Йегер',
-            'Возраст' => '18',
-            'Логин'   => 'fight',
-            'Пароль'  => 'titan'
+            'name'     => 'Эран',
+            'surname'  => 'Йегер',
+            'age'      => '18',
+            'login'    => 'fight',
+            'password' => 'titan'
+        ],  
+        [
+            'name'     => 'Микаса',
+            'surname'  => 'Аккерман',
+            'age'      => '19',
+            'login'    => 'sosweet',
+            'password' => 'unemotional'
         ],  
     );
 
-    public static function connection()
+    public function getUsers()
     {
-        return self::$users;
+        return $this->users;
     }
-
-//     private $name;
-//     private $surname;
-//     private $age;
-//     private $login;
-//     private $password;
-
-//     private $users;
-
-//     public static function getUsers()
-//     {
-//         if (self::$users) self::$users;
-//     }
-//     public static function registerUser($name, $surname, $age, $login, $password)
-//     {   
-//         $user = array(
-//             'Имя'     => $name,
-//             'Фамилия' => $surname,
-//             'Возраст' => $age,
-//             'Логин'   => $login,
-//             'Пароль'  => $password
-//         );
-//         array_push(self::$users, $user);
-        
-//         return $user;
-//     }
-//     public static function authUser($login, $password)
-//     {
-//         foreach (self::$users as $user) {
-//             if (!$user[$login]) {
-//                 return "Пользователя не существует";
-//             }
-
-//             if (!$user[$password]) {
-//                 return "Неверный пароль";
-//             }
-//             return "Вы вошли";
-//         }
-//     }
-
+    public function createUsers($user)
+    {
+        array_push($this->users, $user);
+    }   
 }
-?>

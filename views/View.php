@@ -7,5 +7,3 @@ class View
         include ROOT . $template;
     }
 }
-
-?>

@@ -1,11 +1,10 @@
 <?php
 class Model
 {
-    protected $data = null;
+    protected $database = null;
 
     public function __construct()
     {
-        $this->data = Database::connection();
+        $this->database = new Database; //  Типа подключились.
     }
 }
-?>

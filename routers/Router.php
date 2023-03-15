@@ -35,7 +35,6 @@ class Router
         }
 
         $controller = new $controllerName();
-        $controller->$action();
+        $controller->$action($_REQUEST);
     }
 }
-?>
