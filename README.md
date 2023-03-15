@@ -1,5 +1,5 @@
 # doApp-test
 null_user {
-  'login' => 'don',
-  'password' => '123'.
+  'login' => 'fight',
+  'password' => 'titan'.
 }
