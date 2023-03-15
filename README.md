@@ -1,5 +1,5 @@
 # doApp-test
-# null_user {
+null_user {
   'login' => 'don',
   'password' => '123'.
 }
