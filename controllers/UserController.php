@@ -5,11 +5,13 @@ class UserController extends Controller
     private $userCreatePageTemplate = '/views/templates/user.create.template.php';
 
     public $pageData;
+    
     public function __construct()
     {
         $this->model = new UserModel();        
         $this->view  = new View();
     }
+    
     public function user($request)
     {
         $this->pageData['title'] = "Главная";
@@ -46,6 +48,7 @@ class UserController extends Controller
             header('Location: /user');
         }
     }
+    
     public function login($request)
     {
 
@@ -62,6 +65,7 @@ class UserController extends Controller
             return $_SESSION['logged_user'];
         }
     }
+    
     public function logout()
     {
         unset($_SESSION['logged_user']);
