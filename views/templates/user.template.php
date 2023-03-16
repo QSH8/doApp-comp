@@ -8,11 +8,9 @@
 <body>
     <?php if (isset($_SESSION['logged_user'])): ?>
     <?php
-        echo '
-            <form method="post" id="logout">
-                <input type="submit" name="logout_submit" value="Выход">
-            </form>
-            ';
+        echo '<form method="post" id="logout">
+                  <input type="submit" name="logout_submit" value="Выход">
+              </form>';
 
         foreach ($pageData['info'] as $user) {
             echo 'Имя: '     . $user['name']    . '<br>';
@@ -20,19 +18,15 @@
             echo 'Возраст: ' . $user['age']     . '<br>';
             echo '<br>';
         }
-        echo '
-            <button><a href="user/create">Создать</a></button>
-        ';
+        echo '<button><a href="user/create">Создать</a></button>';
     ?>
     <?php else: ?>
     <?php
-        echo '
-            <form method="post" id="login">
-                <input type="text" name="login" placeholder="Логин">
-                <input type="text" name="password" placeholder="Пароль">
-                <input type="submit" name="login_submit" value="Вход">
-            </form>  
-        ';
+        echo '<form method="post" id="login">
+                  <input type="text" name="login" placeholder="Логин">
+                  <input type="text" name="password" placeholder="Пароль">
+                  <input type="submit" name="login_submit" value="Вход">
+              </form>';
     ?>
     <?php endif ?>
 </body>
