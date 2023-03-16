@@ -2,6 +2,7 @@
 class Database
 {
     private $users;
+    
     public function __construct()
     {
         $dbData = json_decode(file_get_contents("db.json"));
@@ -10,10 +11,12 @@ class Database
 
         $this->users = $dbData;
     }
+    
     public function getUsers()
     {   
         return $this->users;
     }
+    
     public function createUsers($user)
     {
         $filename    = 'db.json';
