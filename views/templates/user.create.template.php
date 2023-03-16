@@ -14,6 +14,5 @@
         <input style="display: block;" type="password" name="password" placeholder="Пароль">
         <input style="display: block;" type="submit" name="create"value="Создать">
     </form>
-    <script src='views/script.js'></script>
 </body>
 </html>
