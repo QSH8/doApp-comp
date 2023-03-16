@@ -2,4 +2,3 @@ RewriteEngine on
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule RewriteRule ^(.*)$ index.php?rt=$1 [L,QSA]
-

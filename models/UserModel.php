@@ -8,9 +8,10 @@ class UserModel extends Model
 
         foreach ($this->database->getUsers() as $user) {
             if ($user['login'] === $login) {
+
                 if ($user['password'] === $password) {
                     $message = "Вы вошли!";
-                    $result = [$user[$login], $user[$password]];
+                    $result = true;
 
                     return [$result, $message];
                 } else {
@@ -31,6 +32,6 @@ class UserModel extends Model
 
     public function createUsers($userData)
     {
-        return $this->database->createUsers($userData);
+        $this->database->createUsers($userData);
     }
 }
