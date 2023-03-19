@@ -5,7 +5,7 @@ class Router
     {
         $controllerName = "UserController";
         $modelName      = "UserModel";
-        $action         = "user";
+        $action         = "index";
 
         $route = explode('/', $_SERVER['REQUEST_URI']);
         

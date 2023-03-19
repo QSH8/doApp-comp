@@ -8,7 +8,7 @@
 <body>
     <?php if (isset($_SESSION['logged_user'])): ?>
     <?php
-        echo '<form method="post" id="logout">
+        echo '<form method="post" id="logout" action="user/logout">
                   <input type="submit" name="logout_submit" value="Выход">
               </form>';
 

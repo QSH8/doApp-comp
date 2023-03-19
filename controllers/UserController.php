@@ -12,20 +12,15 @@ class UserController extends Controller
         $this->view  = new View();
     }
     
-    public function user($request)
+    public function index($request)
     {
         $this->pageData['title'] = "Главная";
-        
-        if (isset($_POST['logout_submit'])) {
-            $this->logout();
+
+        if (!$_SESSION['logged_user']) {
+            $this->login($request);
         }
 
-        if ($_POST['login']) {
-            $this->login($_POST);
-        }
-        if ($_SESSION['logged_user']) {
-            $this->pageData['info'] = $this->model->getUsers();            
-        }
+        $this->pageData['info'] = $this->model->getUsers();            
 
         $this->view->render($this->userPageTemplate, $this->pageData);
     }
@@ -52,22 +47,25 @@ class UserController extends Controller
     public function login($request)
     {
 
-        $userLogin = trim($request['login']);
-        $userPassword = $request['password'];
-
-        $isAuth = $this->model->check($userLogin, $userPassword);
-        [$result, $message] = $isAuth;
-        echo $message;
-
-        if ($result) {
-            $_SESSION['logged_user'] = $userLogin;
-
-            return $_SESSION['logged_user'];
+        if ($_POST['login']) {
+            $userLogin = trim($_POST['login']);
+            $userPassword = $_POST['password'];
+    
+            $isAuth = $this->model->check($userLogin, $userPassword);
+            [$result, $message] = $isAuth;
+            echo $message;
+    
+            if ($result) {
+                $_SESSION['logged_user'] = $userLogin;
+    
+                return $_SESSION['logged_user'];
+            }
         }
     }
     
     public function logout()
     {
         unset($_SESSION['logged_user']);
+        header('Location: /user');
     }
 }
