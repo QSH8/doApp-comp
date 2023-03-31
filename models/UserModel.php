@@ -3,7 +3,7 @@ class UserModel extends Model
 {
     public function check($login, $password)
     {
-        $result = null;
+        $result  = null;
         $message = null;
 
         foreach ($this->database->getUsers() as $user) {
@@ -11,12 +11,14 @@ class UserModel extends Model
 
                 if ($user['password'] === $password) {
                     $message = "Вы вошли!";
-                    $result = true;
+                    $result  = true;
 
                     return [$result, $message];
+                    
                 } else {
                     $message = "Пароль неверный!";
                 }
+                
             } else {
                 $message = "Пользователя не существует";
             }
